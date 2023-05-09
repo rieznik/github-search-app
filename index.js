@@ -1,7 +1,7 @@
 "use strict";
 
-const CLIENT_ID = "d9308aacf8b204d361fd";
-const CLIENT_SECRET = "84969aeef73956f4ec9e8716d1840532802bb81b";
+const CLIENT_ID = "6ea01c207144ba539c8f";
+const CLIENT_SECRET = "0498c5931d5620e4319f9f71b93a45b5886ca8bb";
 
 class UI {
   constructor(
