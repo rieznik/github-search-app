@@ -15,4 +15,12 @@ export class API {
     }
     return data;
   }
+
+  async getUserRepos(input) {
+    const response = await fetch(
+      `https://api.github.com/users/${input}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+    );
+    const data = await response.json();
+    return data;
+  }
 }

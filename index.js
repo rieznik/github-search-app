@@ -18,7 +18,8 @@ const run = () => {
       ui.removeUserData();
       ui.showLoading();
       const userData = await api.getUserData(input);
-      console.log("userData", userData);
+      const userRepos = await api.getUserRepos(input);
+      console.log("userRepos", userRepos);
       ui.renderUserData(userData);
     } catch (error) {
       console.log("error", error);
