@@ -4,13 +4,15 @@ export class UI {
     formElement,
     profileElement,
     alertsElement,
-    loadingElement
+    loadingElement,
+    reposElement
   ) {
     this.searchUserInputElement = searchUserInputElement;
     this.formElement = formElement;
     this.profileElement = profileElement;
     this.alertsElement = alertsElement;
     this.loadingElement = loadingElement;
+    this.reposElement = reposElement;
     this.searchUserInput = "";
 
     this.hideLoading();
@@ -64,8 +66,17 @@ export class UI {
         </div>
       </div>
       <h3 class="page-heading mb-3">Latest Repos</h3>
-      <div class="repos"></div>
     `;
+  }
+
+  renderUserRepo(repos) {
+    repos.forEach((repo) => {
+      const repoEl = document.createElement("li");
+      repoEl.className =
+        "list-group-item d-flex justify-content-between align-items-center";
+      repoEl.innerHTML = `<a href="${repo.url}">${repo.name}</a>`;
+      this.reposElement.appendChild(repoEl);
+    });
   }
 
   renderError(error) {

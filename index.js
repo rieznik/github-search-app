@@ -6,7 +6,8 @@ const ui = new UI(
   document.getElementById("form"),
   document.getElementById("profile"),
   document.getElementById("alerts"),
-  document.getElementById("loading")
+  document.getElementById("loading"),
+  document.getElementById("repos")
 );
 const api = new API();
 
@@ -19,8 +20,8 @@ const run = () => {
       ui.showLoading();
       const userData = await api.getUserData(input);
       const userRepos = await api.getUserRepos(input);
-      console.log("userRepos", userRepos);
       ui.renderUserData(userData);
+      ui.renderUserRepo(userRepos);
     } catch (error) {
       console.log("error", error);
       ui.renderError(error);
