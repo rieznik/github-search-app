@@ -38,8 +38,9 @@ export class UI {
     });
   }
 
-  removeUserData() {
+  removeData() {
     this.profileElement.innerHTML = "";
+    this.reposElement.innerHTML = "";
   }
 
   renderUserData(user) {

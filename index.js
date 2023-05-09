@@ -16,7 +16,7 @@ const run = () => {
 
   const searchUser = async (input) => {
     try {
-      ui.removeUserData();
+      ui.removeData();
       ui.showLoading();
       const userData = await api.getUserData(input);
       const userRepos = await api.getUserRepos(input);
