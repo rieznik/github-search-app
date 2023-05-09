@@ -17,11 +17,15 @@ export class UI {
   }
 
   onInputChange(callback) {
+    let debounceTimer;
     this.searchUserInputElement.addEventListener("keyup", (event) => {
-      this.searchUserInput = event.target.value.trim();
-      if (callback) {
-        callback(this.searchUserInput);
-      }
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        this.searchUserInput = event.target.value.trim();
+        if (callback) {
+          callback(this.searchUserInput);
+        }
+      }, 500);
     });
   }
 
