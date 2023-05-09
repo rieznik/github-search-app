@@ -75,7 +75,7 @@ export class UI {
       const repoEl = document.createElement("li");
       repoEl.className =
         "list-group-item d-flex justify-content-between align-items-center";
-      repoEl.innerHTML = `<a href="${repo.url}">${repo.name}</a>`;
+      repoEl.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
       this.reposElement.appendChild(repoEl);
     });
   }
